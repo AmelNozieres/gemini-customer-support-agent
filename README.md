@@ -1,47 +1,64 @@
-# gemini-customer-support-agent
-Kaggle gemini-customer-support-agent
+#  Gemini-Powered Customer Support Agent (GenAI Capstone)
 
+This project is a working MVP of a GenAI customer support agent — built using Gemini, function calling, document retrieval, and structured output.
 
-#### **Project Title**  
-**SmartMail: A Gemini-Powered Customer Support Email Agent**
-
-#### **Problem**  
-Customer support teams receive large volumes of repetitive, unstructured emails that require manual classification and personalized replies. This is time-consuming, costly, and inconsistent across agents.
-
-#### **Solution**  
-This project demonstrates a Generative AI-powered **Customer Support Email Agent** built entirely using Gemini models. The system:
-- Classifies incoming emails into support categories
-- Retrieves the most relevant knowledge base documents using embeddings
-- Generates grounded and helpful replies using Gemini 2.0 Flash
-
-#### **User Flow**
-1. Input: Email (subject + body)
-2. Step 1: Gemini zero-shot classification into 5 categories
-3. Step 2: Document retrieval using cosine similarity over Gemini-generated embeddings
-4. Step 3: Reply generation using Gemini 2.0 Flash, grounded in retrieved context
+It was created as part of the **Kaggle x Google GenAI Capstone (2025)**.
 
 ---
 
-#### **GenAI Capabilities Demonstrated**
+##  What It Can Do
 
-| Capability                       | Description                                                              |
-|----------------------------------|--------------------------------------------------------------------------|
-| **Document Understanding**       | Extracts user intent from unstructured customer emails                   |
-| **Embeddings**                   | Generates vector representations of support content using Gemini         |
-| **Retrieval-Augmented Generation (RAG)** | Retrieves relevant context before generating responses             |
-| **Grounding**                    | LLM responses are directly grounded in retrieved documents               |
-| **Agents**                       | Multi-step workflow: classify → retrieve → generate reply                |
-
----
-
-#### **Why This Matters**
-This project simulates a real-world use case of automating customer support with GenAI — reducing human workload while maintaining personalization and accuracy.
+The agent:
+- Classifies incoming support messages using Gemini (zero-shot)
+- Detects urgency (priority) with hybrid logic
+- Retrieves relevant KB documents via RAG (embeddings + cosine similarity)
+- Calls live functions to access invoice/order/payment data
+- Controls tone based on the message category
+- Simulates short-term memory using previous messages
+- Evaluates its own responses (scoring + feedback)
+- Logs all interactions to a CSV (MLOps-style)
 
 ---
 
-✅ Built using:  
-- `google-generativeai`  
-- `text-embedding-004`  
-- `gemini-2.0-flash`  
-- Python, Pandas, Sklearn, TQDM  
-- Cosine similarity for retrieval (no FAISS)
+##  Notebook
+
+> ✅ View the final notebook on Kaggle:  
+> https://www.kaggle.com/code/amelnozieres/notebooka52303bfad
+
+You can run it directly in Kaggle — no setup required.
+
+---
+
+## 📚 Articles & Demos
+
+### Final Version
+- 📖 [How I Built a Smarter GenAI Customer Agent (Substack)](https://decryptai.substack.com/p/how-i-built-a-smarter-genai-customer)
+- 🎥 [Demo Video](https://youtu.be/LHebeTt_JtA)
+
+### Original MVP (V1)
+- 📖 [Building a Customer Support Agent](https://decryptai.substack.com/p/building-a-customer-support-agent)
+- 🎥 [Walkthrough Video](https://youtu.be/O9rHu1t8fTM)
+
+---
+
+## 🚀 Try It Locally
+
+> 💡 Note: This notebook is designed to run in Kaggle.  
+> If you want to use Gemini API locally, make sure to:
+- Install `google-generativeai`
+- Set your `GOOGLE_API_KEY` as an environment variable
+- Have Python 3.10+ and access to a Gemini-compatible model
+
+---
+
+## 👩‍💻 Author
+
+**Amal Nozieres**  
+→ [Substack](https://decryptai.substack.com)  
+→ [LinkedIn](https://www.linkedin.com/in/amalnozieres)
+
+---
+
+## 🪪 License
+
+MIT License (feel free to fork, remix, and adapt)
